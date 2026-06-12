@@ -26,7 +26,7 @@ idx_to_class = {}
 def load_model():
     global model, idx_to_class
     if os.path.exists(MODEL_PATH):
-        model = tf.keras.models.load_model(MODEL_PATH)
+        model = tf.keras.models.load_model(MODEL_PATH, compile=False)
         print(f"✅  Model loaded from {MODEL_PATH}")
     else:
         print(f"⚠️   Model file not found at {MODEL_PATH}. Run train.py first.")
